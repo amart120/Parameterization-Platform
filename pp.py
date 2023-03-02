@@ -1,7 +1,7 @@
 from math import *
 import PySimpleGUI as sg
 
-#Maximum input value for the scoll GUI items
+#Maximum input value for the scoll GUI items - arbitrarily high
 MAX = 100000
 
 
