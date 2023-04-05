@@ -265,14 +265,14 @@ def main():
                     axis = "X"
                 else:
                     axis = "Y"
-                genLine(float(values['L_LENGTH']), float(values['L_EXTRUDE_RATE']), float(values["L_MOVE_RATE"]), axis, header, startPos)
+                genLine(float(values['L_LENGTH']), -float(values['L_EXTRUDE_RATE']), float(values["L_MOVE_RATE"]), axis, header, startPos)
                 sg.popup("File generated!", keep_on_top=True)
 
         if event == 'gencircle':
             if (circleError(values)):
                 startPos = ["G0 ", "X" + str(values['C_X']) + ' ', "Y" + str(values['C_Y']) + ' ', "Z" + str(values['C_Z'])]
                 header = ["G21", "G90", "M83", "", "G28","G0 F1000",''.join(startPos),"T0", 'G4 S2', " "]
-                genCircle(float(values['RADIUS']), float(values['C_EXTRUDE_RATE']), float(values["C_MOVE_RATE"]), header, startPos)
+                genCircle(float(values['RADIUS']), -float(values['C_EXTRUDE_RATE']), float(values["C_MOVE_RATE"]), header, startPos)
                 sg.popup("File generated!", keep_on_top=True)
 
         if event == 'gengrad':
